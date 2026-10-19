@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Study Assistant</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <div class="logo">✦</div>
+      <div>
+        <p class="eyebrow">YOUR PERSONAL LEARNING COMPANION</p>
+        <h1>AI Study Assistant</h1>
+        <p class="sub">Turn your study time into a simple, achievable plan.</p>
+      </div>
+      <span class="local-pill">LOCAL DEMO</span>
+    </header>
+
+    <main class="grid">
+      <section class="panel form-panel">
+        <p class="eyebrow">LET'S GET STARTED</p>
+        <h2>What are you learning?</h2>
+        <p class="muted">Choose a subject and how much time you have today.</p>
+        <form id="plan-form">
+          <label for="subject">Subject or skill</label>
+          <input id="subject" name="subject" placeholder="e.g. Python, SQL, DBMS" required maxlength="100">
+          <label for="level">Your current level</label>
+          <select id="level">
+            <option>Beginner</option><option>Intermediate</option><option>Revision</option>
+          </select>
+          <label for="minutes">Available time <strong><span id="minute-label">60</span> min/day</strong></label>
+          <input id="minutes" type="range" min="15" max="240" step="15" value="60">
+          <div class="range-labels"><span>15 min</span><span>4 hours</span></div>
+          <button type="submit" class="primary">Create my study plan <span>→</span></button>
+        </form>
+        <div class="divider"></div>
+        <h3>Need practice too?</h3>
+        <p class="muted small">Create starter questions to check your understanding.</p>
+        <button id="quiz-button" class="secondary" type="button">Generate practice questions</button>
+      </section>
+
+      <section class="panel result-panel">
+        <div class="result-heading">
+          <div><p class="eyebrow">YOUR STUDY SESSION</p><h2 id="result-title">Your plan appears here</h2></div>
+          <div class="spark">✧</div>
+        </div>
+        <div id="result" class="empty">
+          <div class="empty-icon">✎</div>
+          <h3>A little progress adds up.</h3>
+          <p>Enter a subject on the left and create your first plan.</p>
+        </div>
+        <p id="status" class="status" aria-live="polite"></p>
+        <div class="footer-note"><span>●</span> Runs locally on your laptop · No API key required</div>
+      </section>
+    </main>
+    <footer>Built for the Amazon Developer Hackathon · Prototype demo</footer>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
